@@ -91,43 +91,50 @@ The NEU-CLS dataset consists of grayscale images labeled with 9 classes of surfa
 <table align="center">
   <tr>
     <td align="center" width="150px">
-      <img src="assets/Maize_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Maize</b></sub>
+      <img src="assets/cr_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">CR</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Common_wheat_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Common Wheat</b></sub>
+      <img src="assets/gg_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">GG</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Sugar_beet_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Sugar Beet</b></sub>
+      <img src="assets/in_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">IN</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Scentless_Mayweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Scentless Mayweed</b></sub>
+      <img src="assets/pa_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">PA</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Common_Chickweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Chickweed</b></sub>
-    </td>
-    <td align="center" width="150px">
-      <img src="assets/Shepherd’s Purse_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Shepherd's Purse</b></sub>
+      <img src="assets/ps_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">PS</b></sub>
     </td>
   </tr>
   <tr>
     <td align="center" width="150px">
-      <img src="assets/Cleavers_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cleavers</b></sub>
+      <img src="assets/rp_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">RP</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Charlock_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Charlock</b></sub>
+      <img src="assets/rs_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">RS</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Fat_Hen_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Fat Hen</b></sub>
+      <img src="assets/sc_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">SC</b></sub>
     </td>
     <td align="center" width="150px">
-      <img src="assets/Small-flowered Cranesbill_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cranesbill</b></sub>
-    </td>
-    <td align="center" width="150px">
-      <img src="assets/Back-grass_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Black-grass</b></sub>
-    </td>
-    <td align="center" width="150px">
-      <img src="assets/Loose Silky-bent_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Loose Silky-bent</b></sub>
+      <img src="assets/sp_example.jpg" width="250"/><br/><sub><b style="font-size: 15px;">SP</b></sub>
     </td>
   </tr>
 </table>
+
+## 🧪 Experiments and Results
+In this section, we show the experimental results at each stage of the pipeline:
+
+### 1️⃣ Train Base Model
+We use **ResNet-152** as the base architecture for experiments. The model is trained on each dataset using standard training procedures. After training, we evaluate the model on the training, validation, and test sets.
+
+#### 📊 Accuracy of ResNet-152 (Baseline)
+
+| Dataset                | Train Accuracy | Validation Accuracy | Test Accuracy |
+|:----------------------:|:--------------:|:-------------------:|:-------------:|
+| V2 Plant Seedlings     |    100.0%      |        81.85%       |     77.43%    |
+| NEU-CLS Surface Defect |    99.88%      |        92.02%       |     86.93%    |
+
+### 2️⃣ Visualize Feature Maps with Guided Backpropagation
+After training the ResNet-152 baseline model, we apply **Guided Backpropagation (GBP)** to visualize how the network learns features at different depths. ResNet-152 contains **51 ReLU layers**, each representing a unique transformation stage in the network. For each input image, GBP is applied at every ReLU layer to generate a feature visualization, resulting in **51 gradient-based maps**. These maps help us understand how the model focuses on specific parts of the image.
 
