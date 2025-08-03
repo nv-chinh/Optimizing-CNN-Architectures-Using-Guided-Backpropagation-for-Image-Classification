@@ -145,3 +145,4 @@ After training the ResNet-152 baseline model, we apply **Guided Backpropagation 
 </p>
 
 ### 3️⃣ Compute Layer-wise Similarity using SSIM
+we compute the Structural Similarity Index Measure (SSIM) between feature maps of adjacent ReLU layers. By plotting the SSIM values across layers, we can visualize how feature similarity evolves through the depth of the network.
