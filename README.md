@@ -22,13 +22,11 @@ In this step, GBP is applied at each ReLU layer of the trained CNN to extract fe
 ### 4️⃣ Determine Optimal Cut-Off Layer (Elbow Point)  
 SSIM trends across layers are averaged and plotted. Using the **KneeLocator** algorithm, the **elbow point** is automatically identified - where meaningful feature learning stops improving.
 
-### 5️⃣ Redesign the Model Architecture 
+### 5️⃣ Optimizing the Model Architecture
 The model is truncated at the elbow point to remove redundant layers. A new classification head is added to the remaining layers to form a more efficient and streamlined architecture.
 
-### 6️⃣ Retrain the Truncated Model 
 The newly designed cut model is **retrained** on the same dataset, using the same pipeline as the baseline model.
 
-### 7️⃣ Evaluate and Compare Performance
 Both the **full model** and the **truncated model** are evaluated using standard metrics (e.g., accuracy).
 
 ## 🗂️ Datasets
@@ -145,10 +143,26 @@ After training the ResNet-152 baseline model, we apply **Guided Backpropagation 
 </p>
 
 ### 3️⃣ Compute Layer-wise Similarity using SSIM
-we compute the Structural Similarity Index Measure (SSIM) between feature maps of adjacent ReLU layers. By plotting the SSIM values across layers, we can visualize how feature similarity changes and progresses through the depth of the network.
+We compute the Structural Similarity Index Measure (SSIM) between feature maps of adjacent ReLU layers. By plotting the SSIM values across layers, we can visualize how feature similarity changes and progresses through the depth of the network.
 
 <p align="center">
-  <img src="assets/ssim_plot_plant.png" width="40%" />
+  <img src="assets/ssim_plot_choose_elbow_point_plant.png" width="40%" />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="assets/ssim_plot_neu.png" width="40%"/>
+  <img src="assets/ssim_plot_choose_elbow_point_neu.png" width="40%"/>
 </p>
+
+Based on the SSIM curves, both datasets show elbow points at layer 9, indicating that the most significant and non-redundant features are captured within the first 9 ReLU layers of the model.
+
+### 5️⃣ Optimizing the Model Architecture
+Based on the elbow point at layer 9, we truncate the model and attach a new classification head, forming a lightweight and efficient model architecture.
+
+The optimized model architecture is retrained on both datasets using the original training pipeline to ensure a fair comparison with the base model architecture.
+
+#### 📊 Accuracy Comparison: Base Architecture vs. Optimized Architecture
+
+|      Dataset           |     Model                | Train Accuracy | Validation Accuracy | Test Accuracy |
+|:----------------------:|:------------------------:|:---------------:|:-------------------:|:-------------:|
+| V2 Plant Seedlings     | Base Architecture        | **100.00%**     |       81.85%        |     77.43%    |
+|                        | Optimized Architecture   |     99.64%      |   **92.96%**        |  **87.47%**   |
+| NEU-CLS Surface Defect | Base Architecture        |     99.88%      |       92.02%        |     86.93%    |
+|                        | Optimized Architecture   | **100.00%**     |   **98.59%**        |  **95.46%**   |
