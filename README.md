@@ -10,7 +10,7 @@ This project is based on the paper: **[Visualizing Feature Maps for Model Select
 This project follows a step-by-step pipeline to analyze and optimize CNN architectures:
 
 ### 1️⃣ Train Base Model
-A CNN model (e.g., ResNet-152) with full architecture is trained on the dataset to serve as the baseline architecture.
+A CNN model (e.g., VGG, ResNet, EfficientNet) with full architecture is trained on the dataset to serve as the baseline architecture.
 
 ### 2️⃣ Visualize Feature Maps with Guided Backpropagation 
 **Guided Backpropagation (GBP)** is a gradient-based visualization technique that computes the gradient of the output with respect to the input image when backpropagating through the Relu activation function. This highlights which parts of the input image contribute most to the network's activations.
@@ -30,3 +30,14 @@ The newly designed cut model is **retrained** on the same dataset, using the sam
 
 ### 7️⃣ Evaluate and Compare Performance
 Both the **full model** and the **truncated model** are evaluated using standard metrics (e.g., accuracy).
+
+## 🗂️ Datasets
+
+We conduct experiments on two benchmark datasets to evaluate the effectiveness of the proposed method:
+
+### 🌱 V2 Plant Seedlings Dataset
+The V2 Plant Seedlings Dataset contains images of crop and weed seedlings belonging to 12 species. The images were captured under controlled conditions at different growth stages, making it a useful benchmark for plant classification tasks in agriculture.
+
+### 🧪 NEU Surface Defect Dataset (NEU-CLS)
+The NEU-CLS dataset consists of grayscale images of hot-rolled steel strips labeled with six types of surface defects. It is commonly used in industrial inspection and defect classification tasks.
+
