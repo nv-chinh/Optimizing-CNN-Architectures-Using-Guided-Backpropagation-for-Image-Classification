@@ -138,3 +138,10 @@ We use **ResNet-152** as the base architecture for experiments. The model is tra
 ### 2️⃣ Visualize Feature Maps with Guided Backpropagation
 After training the ResNet-152 baseline model, we apply **Guided Backpropagation (GBP)** to visualize how the network learns features at different depths. ResNet-152 contains **51 ReLU layers**, each representing a unique transformation stage in the network. For each input image, GBP is applied at every ReLU layer to generate a feature visualization, resulting in **51 gradient-based maps**. These maps help us understand how the model focuses on specific parts of the image.
 
+<p align="center">
+  <img src="assets/GBP_example.png" width="1000"/>
+  <br/>
+  <sub><b>Figure:</b> Guided Backpropagation visualizations across 51 ReLU layers of ResNet-152 for a sample input image from V2 Plant Seedlings Dataset</sub>
+</p>
+
+### 3️⃣ Compute Layer-wise Similarity using SSIM
