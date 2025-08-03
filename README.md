@@ -36,8 +36,98 @@ Both the **full model** and the **truncated model** are evaluated using standard
 We conduct experiments on two benchmark datasets to evaluate the effectiveness of the proposed method:
 
 ### 🌱 V2 Plant Seedlings Dataset
-The V2 Plant Seedlings Dataset contains images of crop and weed seedlings belonging to 12 species. The images were captured under controlled conditions at different growth stages, making it a useful benchmark for plant classification tasks in agriculture.
+The V2 Plant Seedlings Dataset contains images of crop and weed seedlings belonging to 12 classes. The images were captured under controlled conditions at different growth stages, making it a useful benchmark for plant classification tasks in agriculture.
+
+<p align="center"><strong>📸 Example Images for 12 Classes</strong></p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="150px">
+      <img src="assets/Maize_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Maize</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Common_wheat_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Common Wheat</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Sugar_beet_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Sugar Beet</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Scentless_Mayweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Scentless Mayweed</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Common_Chickweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Chickweed</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Shepherd’s Purse_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Shepherd's Purse</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="150px">
+      <img src="assets/Cleavers_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cleavers</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Charlock_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Charlock</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Fat_Hen_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Fat Hen</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Small-flowered Cranesbill_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cranesbill</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Back-grass_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Black-grass</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Loose Silky-bent_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Loose Silky-bent</b></sub>
+    </td>
+  </tr>
+</table>
 
 ### 🧪 NEU Surface Defect Dataset (NEU-CLS)
-The NEU-CLS dataset consists of grayscale images of hot-rolled steel strips labeled with six types of surface defects. It is commonly used in industrial inspection and defect classification tasks.
+The NEU-CLS dataset consists of grayscale images labeled with 9 classes of surface defects. It is commonly used in industrial inspection and defect classification tasks.
+
+<p align="center"><strong>📸 Example Images for 9 Classes</strong></p>
+
+<table align="center">
+  <tr>
+    <td align="center" width="150px">
+      <img src="assets/Maize_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Maize</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Common_wheat_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Common Wheat</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Sugar_beet_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Sugar Beet</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Scentless_Mayweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Scentless Mayweed</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Common_Chickweed_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Chickweed</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Shepherd’s Purse_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Shepherd's Purse</b></sub>
+    </td>
+  </tr>
+  <tr>
+    <td align="center" width="150px">
+      <img src="assets/Cleavers_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cleavers</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Charlock_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Charlock</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Fat_Hen_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Fat Hen</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Small-flowered Cranesbill_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Cranesbill</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Back-grass_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Black-grass</b></sub>
+    </td>
+    <td align="center" width="150px">
+      <img src="assets/Loose Silky-bent_example.png" width="250"/><br/><sub><b style="font-size: 15px;">Loose Silky-bent</b></sub>
+    </td>
+  </tr>
+</table>
 
