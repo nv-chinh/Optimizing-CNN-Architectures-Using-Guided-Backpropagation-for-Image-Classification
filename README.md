@@ -166,3 +166,33 @@ The optimized model architecture is retrained on both datasets using the origina
 |                        | Optimized Architecture   |     99.64%      |   **92.96%**        |  **87.47%**   |
 | NEU-CLS Surface Defect | Base Architecture        |     99.88%      |       92.02%        |     86.93%    |
 |                        | Optimized Architecture   | **100.00%**     |   **98.59%**        |  **95.46%**   |
+
+## 🧠 Testing Insights: Visual Comparisons of Model Predictions
+Below are a few test examples which the Optimized Architecture successfully corrected misclassifications made by the Base Architecture. Each example consists of the input image, the last feature map from base architecture & optimized architecture - providing visual insight into how the optimized architecture improves performance.
+
+### 🌱 V2 Plant Seedlings Dataset
+<p align="center">
+  <img src="test_examples/Black-grass_2.jpg" width="45%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="test_examples/Charlock_108.jpg" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="test_examples/Loose Silky-bent_30.jpg" width="45%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="test_examples/Shepherd's Purse_11.jpg" width="45%"/>
+</p>
+
+### 🧪 NEU Surface Defect Dataset (NEU-CLS)
+<p align="center">
+  <img src="test_examples/cr_1112.jpg" width="45%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="test_examples/gg_22.jpg" width="45%"/>
+</p>
+
+<p align="center">
+  <img src="test_examples/in_23.jpg" width="45%"/>
+  &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="test_examples/sp_65.jpg" width="45%"/>
+</p>
+
