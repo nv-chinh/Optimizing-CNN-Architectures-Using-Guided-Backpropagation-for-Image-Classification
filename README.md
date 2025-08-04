@@ -120,6 +120,14 @@ The NEU-CLS dataset consists of grayscale images labeled with 9 classes of surfa
   </tr>
 </table>
 
+### 🗂 Dataset Splitting Information
+Due to limited computational resources, we utilize only a portion of each dataset for training and validation. The remaining samples are reserved for testing.
+
+| Dataset                | <div align="center">Train Images</div> | <div align="center">Validation Images</div> | <div align="center">Test Images</div> |
+|------------------------|:--------------------------------------:|:-------------------------------------------:|:-------------------------------------:|
+| V2 Plant Seedlings     |                 **825**                |                   **270**                   |               **4444**               |
+| NEU-CLS Surface Defect |                 **863**                |                   **213**                   |               **6150**               |
+
 ## 🧪 Experiments and Results
 In this section, we show the experimental results at each stage of the pipeline:
 
@@ -160,15 +168,49 @@ The optimized model architecture is retrained on both datasets using the origina
 
 #### 📊 Accuracy Comparison: Base Architecture vs. Optimized Architecture
 
-|      Dataset           |     Model                | Train Accuracy | Validation Accuracy | Test Accuracy |
-|:----------------------:|:------------------------:|:---------------:|:-------------------:|:-------------:|
-| V2 Plant Seedlings     | Base Architecture        | **100.00%**     |       81.85%        |     77.43%    |
-|                        | Optimized Architecture   |     99.64%      |   **92.96%**        |  **87.47%**   |
-| NEU-CLS Surface Defect | Base Architecture        |     99.88%      |       92.02%        |     86.93%    |
-|                        | Optimized Architecture   | **100.00%**     |   **98.59%**        |  **95.46%**   |
+<table>
+  <thead>
+    <tr>
+      <th>Dataset</th>
+      <th>Model</th>
+      <th>Train Accuracy</th>
+      <th>Validation Accuracy</th>
+      <th>Test Accuracy</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="2" align="center">V2 Plant Seedlings</td>
+      <td align="center">Base Architecture</td>
+      <td align="center"><b>100.00%</b></td>
+      <td align="center">81.85%</td>
+      <td align="center">77.43%</td>
+    </tr>
+    <tr>
+      <td align="center">Optimized Architecture</td>
+      <td align="center">99.64%</td>
+      <td align="center"><b>92.96%</b></td>
+      <td align="center"><b>87.47%</b></td>
+    </tr>
+    <tr>
+      <td rowspan="2" align="center">NEU-CLS Surface Defect</td>
+      <td align="center">Base Architecture</td>
+      <td align="center">99.88%</td>
+      <td align="center">92.02%</td>
+      <td align="center">86.93%</td>
+    </tr>
+    <tr>
+      <td align="center">Optimized Architecture</td>
+      <td align="center"><b>100.00%</b></td>
+      <td align="center"><b>98.59%</b></td>
+      <td align="center"><b>95.46%</b></td>
+    </tr>
+  </tbody>
+</table>
+
 
 ## 🧠 Testing Insights: Visual Comparisons of Model Predictions
-Below are a few test examples which the Optimized Architecture successfully corrected misclassifications made by the Base Architecture. Each example consists of the input image, the last feature map from base architecture & optimized architecture - providing visual insight into how the optimized architecture improves performance.
+Below are some test examples which the Optimized Architecture successfully corrected misclassifications made by the Base Architecture. Each example consists of the input image, the last feature map from base architecture & optimized architecture - providing visual insight into how the optimized architecture improves performance.
 
 ### 🌱 V2 Plant Seedlings Dataset
 <p align="center">
@@ -196,3 +238,7 @@ Below are a few test examples which the Optimized Architecture successfully corr
   <img src="test_examples/sp_65.jpg" width="45%"/>
 </p>
 
+## 📌Feedback Welcome
+This implementation is based closely on the methodology described in the paper, as no official code was found.
+Although we’ve tried to follow the paper's intent, certain aspects may not be perfectly reproduced.
+We genuinely **welcome any feedback, suggestions, or contributions** to enhance the quality and accuracy of this project.
