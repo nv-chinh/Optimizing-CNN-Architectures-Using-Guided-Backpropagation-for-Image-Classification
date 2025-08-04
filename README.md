@@ -178,9 +178,9 @@ Below are a few test examples which the Optimized Architecture successfully corr
 </p>
 
 <p align="center">
-  <img src="test_examples/Loose Silky-bent_30.jpg" width="45%"/>
+  <img src="test_examples/Loose_Silky-bent_30.jpg" width="45%"/>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="test_examples/Shepherd's Purse_11.jpg" width="45%"/>
+  <img src="test_examples/Shepherd Purse_11.jpg" width="45%"/>
 </p>
 
 ### 🧪 NEU Surface Defect Dataset (NEU-CLS)
